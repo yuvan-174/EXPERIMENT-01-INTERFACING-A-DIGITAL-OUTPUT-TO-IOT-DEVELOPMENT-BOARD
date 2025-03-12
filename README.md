@@ -1,25 +1,25 @@
 # EXPERIMENT-01-INTERFACING-A-DIGITAL-OUTPUT-TO-IOT-DEVELOPMENT-BOARD
 
 
-**DATE:**
+**DATE:12/03/2025** 
 
-**NAME:**
+**NAME:YUVAN SUNDAR S**
 
-**ROLL NO:**
+**ROLL NO:212223040250**
 
-**DEPARTMENT:**
+**DEPARTMENT:COMPUTER SCIENCE ENGINEERING**
 
-## Aim
+## Aim:
 
 To Interface a Digital output (LED) to ARM IOT development board and write a program to blink an LED.
 
-## Components required
+## Components required:
 
 - STM32 CUBE IDE
 - ARM IOT development board
 - STM programmer tool
 
-## Theory
+## Theory:
 
 The ARM (Advanced RISC Machine) architecture is widely used in microcontrollers and processors due to its efficiency, low power consumption, and high performance. ARM processors follow the Reduced Instruction Set Computing (RISC) design, making them ideal for embedded systems, mobile devices, and IoT applications. Many well-known semiconductor companies, including STMicroelectronics, use ARM-based architectures to develop powerful and energy-efficient microcontrollers.
 
@@ -82,14 +82,34 @@ With its power-efficient design, built-in LoRaWAN support, and flexible communic
 
 
 
-## STM 32 CUBE PROGRAM
+## STM 32 CUBE PROGRAM:
 
 ```c
-// Your STM 32 CUBE Program code here
+int main(void)
+{
+  HAL_Init();
+
+  SystemClock_Config();
+
+  MX_GPIO_Init();
+
+  while (1)
+  {
+	  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_0, GPIO_PIN_RESET);
+	  HAL_Delay(3000);
+	  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_0, GPIO_PIN_SET);
+	  HAL_Delay(3000);
+  }
+}
 ```
 
-## OUTPUT
+## OUTPUT:
+## ON:
+![IMG20250312111849](https://github.com/user-attachments/assets/2e9abb17-1247-4392-84b6-148396e7d932)
+## OFF:
+![IMG20250312111845](https://github.com/user-attachments/assets/3c57109c-e3f5-4e65-8404-48bcad5b7ac9)
 
-## Result
+
+## Result:
 
 Interfacing a digital output with ARM microcontroller based IOT development is executed and the results are verified.
